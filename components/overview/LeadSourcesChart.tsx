@@ -30,8 +30,8 @@ export function LeadSourcesChart() {
     <section className="rounded-xl bg-white p-5 shadow-card">
       <h3 className="font-serif text-lg text-ink">Lead Sources</h3>
 
-      <div className="mt-2 h-[220px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="mt-2 h-[220px] w-full min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <PieChart>
             <Pie
               data={chartData}

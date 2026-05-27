@@ -54,8 +54,8 @@ export function RevenueVsTargetChart({ range }: RevenueVsTargetChartProps) {
   return (
     <section className="rounded-xl bg-white p-5 shadow-card">
       <h3 className="font-serif text-lg text-ink">Monthly Revenue vs Target</h3>
-      <div className="mt-4 h-[350px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="mt-4 h-[350px] w-full min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <BarChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
             <CartesianGrid stroke="#E5E5E5" strokeDasharray="3 3" />
             <XAxis

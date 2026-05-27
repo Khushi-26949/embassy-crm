@@ -23,24 +23,21 @@ export function LeadSourcesAnalyticsChart() {
   const data = leadSources.map((source, index) => ({
     name: source.source,
     value: source.percentage,
-    count: Math.round(leads.length * 
-           source.percentage / 100),
+    count: Math.round(leads.length * source.percentage / 100),
     revenue: Math.round(
-      leads.reduce((sum, l) => sum + l.budget, 0) 
-      * source.percentage / 100
+      leads.reduce((sum, l) => sum + l.budget, 0) * source.percentage / 100
     ),
     color: COLORS[index % COLORS.length],
   }));
 
   return (
-    <section className="flex h-full flex-col 
-      rounded-xl bg-white p-5 shadow-card">
+    <section className="flex h-full flex-col rounded-xl bg-white p-5 shadow-card">
       <h3 className="font-serif text-lg text-ink">
         Lead Sources
       </h3>
 
-      <div className="mt-4 h-[280px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="mt-4 h-[280px] w-full min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <PieChart>
             <Pie
               data={data}
@@ -59,10 +56,7 @@ export function LeadSourcesAnalyticsChart() {
               ))}
             </Pie>
             <Tooltip
-              formatter={(value, name) => [
-                `${value}%`,
-                name,
-              ]}
+              formatter={(value, name) => [`${value}%`, name]}
             />
           </PieChart>
         </ResponsiveContainer>
@@ -72,22 +66,17 @@ export function LeadSourcesAnalyticsChart() {
         {data.map((item) => (
           <li
             key={item.name}
-            className="flex items-center 
-            justify-between text-xs"
+            className="flex items-center justify-between text-xs"
           >
             <div className="flex items-center gap-2">
               <span
-                className="h-2.5 w-2.5 
-                rounded-full flex-shrink-0"
+                className="h-2.5 w-2.5 rounded-full flex-shrink-0"
                 style={{ backgroundColor: item.color }}
               />
-              <span className="text-ink">
-                {item.name}
-              </span>
+              <span className="text-ink">{item.name}</span>
             </div>
             <span className="text-ink/60">
-              {item.count} · {item.value}% · 
-              {formatInr(item.revenue)}
+              {item.count} · {item.value}% · {formatInr(item.revenue)}
             </span>
           </li>
         ))}

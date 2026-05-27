@@ -25,8 +25,8 @@ export function EventCategoryChart({ range }: EventCategoryChartProps) {
   return (
     <section className="rounded-xl bg-white p-5 shadow-card">
       <h3 className="font-serif text-lg text-ink">Revenue by Event Category</h3>
-      <div className="mt-4 h-[320px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="mt-4 h-[320px] w-full min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <BarChart
             layout="vertical"
             data={data}

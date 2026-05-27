@@ -19,8 +19,8 @@ export function ConversionFunnelChart() {
   return (
     <section className="flex h-full flex-col rounded-xl bg-white p-5 shadow-card">
       <h3 className="font-serif text-lg text-ink">Lead Conversion Funnel</h3>
-      <div className="mt-4 h-[280px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="mt-4 h-[280px] w-full min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <FunnelChart>
             <Tooltip formatter={(value, _name, item) => [`${value ?? 0} leads`, item?.payload?.name]} />
             <Funnel dataKey="value" data={funnelStages} isAnimationActive stroke="#FFFFFF">

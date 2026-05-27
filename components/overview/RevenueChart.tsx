@@ -49,8 +49,8 @@ export function RevenueChart() {
   return (
     <section className="rounded-xl bg-white p-5 shadow-card">
       <h3 className="font-serif text-lg text-ink">Revenue Overview 2024</h3>
-      <div className="mt-4 h-[320px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="mt-4 h-[320px] w-full min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <LineChart data={chartData} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
             <CartesianGrid stroke="#E5E5E5" strokeDasharray="3 3" />
             <XAxis
