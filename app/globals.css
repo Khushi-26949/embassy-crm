@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply transition-colors duration-300;
+  }
+
+  body {
+    @apply bg-ivory text-ink font-sans antialiased;
+  }
+
+  [data-theme='dark'] body {
+    @apply bg-night text-ivory;
+  }
+
+  ::selection {
+    @apply bg-crimson/20 text-ink;
+  }
+
+  [data-theme='dark'] ::selection {
+    @apply bg-crimson/40 text-ivory;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-ivory;
+  }
+
+  [data-theme='dark'] ::-webkit-scrollbar-track {
+    @apply bg-night;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-crimson rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-crimson-dark;
+  }
+}
+
+@layer components {
+  .embassy-card {
+    @apply rounded-xl border border-coolgrey/70 bg-white shadow-card transition-all duration-200 ease-out;
+  }
+
+  [data-theme='dark'] .embassy-card {
+    @apply border-night-border bg-night-card;
+  }
+
+  .embassy-card-hover {
+    @apply embassy-card hover:-translate-y-0.5 hover:shadow-elevated;
+  }
+
+  .page-transition {
+    @apply animate-page-in;
+  }
+
+  .surface-panel {
+    @apply bg-white border-coolgrey;
+  }
+
+  [data-theme='dark'] .surface-panel {
+    @apply bg-night-card border-night-border text-ivory;
+  }
+}
