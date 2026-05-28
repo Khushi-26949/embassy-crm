@@ -43,7 +43,7 @@ function LeadCardContent({
   return (
     <article
       className={cn(
-        'group relative rounded-xl bg-white p-4 shadow-card',
+        'group relative rounded-xl bg-white dark:bg-night-card p-4 shadow-card',
         isOverlay &&
           'rotate-2 scale-105 cursor-grabbing opacity-100 shadow-elevated ring-2 ring-crimson',
         !isOverlay && 'transition duration-200'
@@ -53,7 +53,7 @@ function LeadCardContent({
 
       <div className={dragHandle ? 'pr-6' : undefined}>
         <div className="flex flex-wrap items-start justify-between gap-2">
-          <h4 className="font-serif text-[15px] font-bold leading-snug text-ink">
+          <h4 className="font-serif text-[15px] font-bold leading-snug text-ink dark:text-ivory">
             {lead.clientName}
           </h4>
           <span
@@ -66,7 +66,7 @@ function LeadCardContent({
           </span>
         </div>
 
-        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-ink/60">
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-ink/60 dark:text-ivory/60">
           <CalendarDays className="h-3.5 w-3.5 shrink-0" />
           <span>{format(new Date(lead.eventDate), 'd MMM yyyy')}</span>
           <span
@@ -155,7 +155,7 @@ function SortableLeadCard({ lead }: LeadCardProps) {
       {...attributes}
       {...listeners}
       aria-label="Drag lead card"
-      className="absolute right-3 top-3 rounded p-1 text-ink/30 opacity-0 transition hover:bg-ivory hover:text-crimson group-hover:opacity-100 cursor-grab active:cursor-grabbing"
+      className="absolute right-3 top-3 rounded p-1 text-ink/30 opacity-0 transition hover:bg-ivory dark:bg-night hover:text-crimson group-hover:opacity-100 cursor-grab active:cursor-grabbing"
     >
       <GripVertical className="h-4 w-4" />
     </button>

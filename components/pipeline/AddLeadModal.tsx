@@ -41,7 +41,7 @@ const EVENT_TYPES: Lead['eventType'][] = [
 ];
 
 const selectClassName = cn(
-  'h-10 w-full rounded-md border border-coolgrey bg-white px-3 text-sm text-ink outline-none transition',
+  'h-10 w-full rounded-md border border-coolgrey dark:border-night-border bg-white dark:bg-night-card dark:bg-night-surface px-3 text-sm text-ink dark:text-ivory outline-none transition',
   'focus:border-crimson focus:ring-2 focus:ring-crimson/20'
 );
 
@@ -134,11 +134,11 @@ export function AddLeadModal({
             error={errors.clientName}
           />
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-ink">
+            <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
               Phone *
             </label>
             <div className="flex">
-              <span className="inline-flex h-10 items-center rounded-l-md border border-r-0 border-coolgrey bg-ivory px-3 text-sm text-ink/60">
+              <span className="inline-flex h-10 items-center rounded-l-md border border-r-0 border-coolgrey dark:border-night-border bg-ivory dark:bg-night px-3 text-sm text-ink/60 dark:text-ivory/60">
                 +91
               </span>
               <input
@@ -169,7 +169,7 @@ export function AddLeadModal({
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-ink">
+            <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
               Event Type *
             </label>
             <select
@@ -198,11 +198,11 @@ export function AddLeadModal({
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-ink">
+            <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
               Expected Budget *
             </label>
             <div className="flex">
-              <span className="inline-flex h-10 items-center rounded-l-md border border-r-0 border-coolgrey bg-ivory px-3 text-sm text-gold">
+              <span className="inline-flex h-10 items-center rounded-l-md border border-r-0 border-coolgrey dark:border-night-border bg-ivory dark:bg-night px-3 text-sm text-gold">
                 ₹
               </span>
               <input
@@ -232,7 +232,7 @@ export function AddLeadModal({
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-ink">
+            <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
               Priority
             </label>
             <select
@@ -248,7 +248,7 @@ export function AddLeadModal({
             </select>
           </div>
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-ink">
+            <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
               Assigned To *
             </label>
             <select
@@ -267,7 +267,7 @@ export function AddLeadModal({
             ) : null}
           </div>
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-ink">
+            <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
               Stage
             </label>
             <select
@@ -287,7 +287,7 @@ export function AddLeadModal({
         </div>
 
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-ink">Notes</label>
+          <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">Notes</label>
           <textarea
             value={form.notes}
             onChange={(e) => update({ notes: e.target.value })}

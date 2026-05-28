@@ -43,15 +43,15 @@ export function AgendaView({ currentDate, onSelectEvent }: AgendaViewProps) {
                 <button
                   type="button"
                   onClick={() => onSelectEvent(event)}
-                  className="flex w-full flex-col gap-2 rounded-xl bg-white p-4 text-left shadow-card transition hover:bg-ivory sm:flex-row sm:items-start sm:justify-between"
+                  className="flex w-full flex-col gap-2 rounded-xl bg-white dark:bg-night-card p-4 text-left shadow-card transition hover:bg-ivory dark:bg-night sm:flex-row sm:items-start sm:justify-between"
                   style={{
                     borderLeft: `4px solid ${CATEGORY_COLORS[event.category]}`,
                   }}
                 >
                   <div className="min-w-0 flex-1">
-                    <p className="font-semibold text-ink">{event.title}</p>
-                    <p className="text-sm text-ink/60">{event.clientName}</p>
-                    <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-ink/60">
+                    <p className="font-semibold text-ink dark:text-ivory">{event.title}</p>
+                    <p className="text-sm text-ink/60 dark:text-ivory/60">{event.clientName}</p>
+                    <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-ink/60 dark:text-ivory/60">
                       <span className="inline-flex items-center gap-1">
                         <Clock className="h-3.5 w-3.5" />
                         {formatEventTimeRange(event)}

@@ -55,15 +55,15 @@ export function NotificationPanel({
 
       <aside
         className={cn(
-          'fixed inset-y-0 right-0 z-[70] flex w-full max-w-md flex-col border-l border-coolgrey bg-white shadow-elevated transition-transform duration-300',
+          'fixed inset-y-0 right-0 z-[70] flex w-full max-w-md flex-col border-l border-coolgrey dark:border-night-border bg-white dark:bg-night-card shadow-elevated transition-transform duration-300',
           open ? 'translate-x-0' : 'translate-x-full'
         )}
         aria-hidden={!open}
       >
-        <div className="flex items-center justify-between border-b border-coolgrey px-5 py-4">
+        <div className="flex items-center justify-between border-b border-coolgrey dark:border-night-border px-5 py-4">
           <div>
-            <h2 className="font-serif text-xl text-ink">Notifications</h2>
-            <p className="text-xs text-ink/60">
+            <h2 className="font-serif text-xl text-ink dark:text-ivory">Notifications</h2>
+            <p className="text-xs text-ink/60 dark:text-ivory/60">
               {unreadCount} unread
             </p>
           </div>
@@ -71,13 +71,13 @@ export function NotificationPanel({
             type="button"
             onClick={onClose}
             aria-label="Close panel"
-            className="rounded-md p-2 text-ink/60 hover:bg-ivory hover:text-ink"
+            className="rounded-md p-2 text-ink/60 dark:text-ivory/60 hover:bg-ivory dark:bg-night hover:text-ink dark:text-ivory"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        <div className="flex items-center justify-end gap-3 border-b border-coolgrey px-5 py-2">
+        <div className="flex items-center justify-end gap-3 border-b border-coolgrey dark:border-night-border px-5 py-2">
           <button
             type="button"
             onClick={onMarkAllRead}
@@ -101,7 +101,7 @@ export function NotificationPanel({
                   <p className="text-xs font-semibold uppercase tracking-wide text-gold">
                     {typeLabel(notification.type)}
                   </p>
-                  <p className="mt-1 text-sm text-ink">{notification.message}</p>
+                  <p className="mt-1 text-sm text-ink dark:text-ivory">{notification.message}</p>
                   <p className="mt-2 text-xs text-ink/50">
                     {formatTimestamp(notification.timestamp)}
                   </p>

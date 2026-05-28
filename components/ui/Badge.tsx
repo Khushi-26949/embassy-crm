@@ -8,11 +8,11 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const variantClasses: Record<BadgeVariant, string> = {
-  success: 'bg-gold/15 text-ink border-gold/40',
-  warning: 'bg-[#F59E0B]/15 text-ink border-[#F59E0B]/30',
-  info: 'bg-[#3B82F6]/12 text-ink border-[#3B82F6]/25',
+  success: 'bg-gold/15 text-ink dark:text-ivory border-gold/40',
+  warning: 'bg-[#F59E0B]/15 text-ink dark:text-ivory border-[#F59E0B]/30',
+  info: 'bg-[#3B82F6]/12 text-ink dark:text-ivory border-[#3B82F6]/25',
   danger: 'bg-crimson/12 text-crimson border-crimson/25',
-  gold: 'bg-gold/20 text-ink border-gold/50 shadow-gold',
+  gold: 'bg-gold/20 text-ink dark:text-ivory border-gold/50 shadow-gold',
 };
 
 export function Badge({ className, variant = 'info', ...props }: BadgeProps) {

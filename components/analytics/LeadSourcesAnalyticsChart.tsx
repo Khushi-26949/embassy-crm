@@ -31,12 +31,12 @@ export function LeadSourcesAnalyticsChart() {
   }));
 
   return (
-    <section className="flex h-full flex-col rounded-xl bg-white p-5 shadow-card">
-      <h3 className="font-serif text-lg text-ink">
+    <section className="flex h-full flex-col rounded-xl bg-white dark:bg-night-card p-5 shadow-card w-full min-w-0 overflow-hidden">
+      <h3 className="font-serif text-lg text-ink dark:text-ivory">
         Lead Sources
       </h3>
 
-      <div className="mt-4 h-[280px] w-full min-w-0">
+      <div className="mt-4 h-[280px] w-full min-w-0 overflow-hidden">
         <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <PieChart>
             <Pie
@@ -73,9 +73,9 @@ export function LeadSourcesAnalyticsChart() {
                 className="h-2.5 w-2.5 rounded-full flex-shrink-0"
                 style={{ backgroundColor: item.color }}
               />
-              <span className="text-ink">{item.name}</span>
+              <span className="text-ink dark:text-ivory">{item.name}</span>
             </div>
-            <span className="text-ink/60">
+            <span className="text-ink/60 dark:text-ivory/60">
               {item.count} · {item.value}% · {formatInr(item.revenue)}
             </span>
           </li>

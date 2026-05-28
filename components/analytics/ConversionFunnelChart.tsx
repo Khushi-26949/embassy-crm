@@ -17,9 +17,9 @@ export function ConversionFunnelChart() {
   }));
 
   return (
-    <section className="flex h-full flex-col rounded-xl bg-white p-5 shadow-card">
-      <h3 className="font-serif text-lg text-ink">Lead Conversion Funnel</h3>
-      <div className="mt-4 h-[280px] w-full min-w-0">
+    <section className="flex h-full flex-col rounded-xl bg-white dark:bg-night-card p-5 shadow-card w-full min-w-0 overflow-hidden">
+      <h3 className="font-serif text-lg text-ink dark:text-ivory">Lead Conversion Funnel</h3>
+      <div className="mt-4 h-[280px] w-full min-w-0 overflow-hidden">
         <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <FunnelChart>
             <Tooltip formatter={(value, _name, item) => [`${value ?? 0} leads`, item?.payload?.name]} />
@@ -30,7 +30,7 @@ export function ConversionFunnelChart() {
           </FunnelChart>
         </ResponsiveContainer>
       </div>
-      <ul className="mt-4 space-y-2 border-t border-coolgrey pt-4">
+      <ul className="mt-4 space-y-2 border-t border-coolgrey dark:border-night-border pt-4">
         {conversions.map((step) => (
           <li key={`${step.from}-${step.to}`} className="flex items-center justify-between text-xs text-ink/70">
             <span>{step.from} → {step.to}</span>

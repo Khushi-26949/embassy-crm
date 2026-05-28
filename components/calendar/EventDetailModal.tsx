@@ -32,9 +32,9 @@ export function EventDetailModal({ event, open, onClose }: EventDetailModalProps
       className="max-h-[90vh] max-w-2xl overflow-y-auto"
     >
       <div className="-mt-2">
-        <div className="flex flex-wrap items-start justify-between gap-3 border-b border-coolgrey pb-4">
+        <div className="flex flex-wrap items-start justify-between gap-3 border-b border-coolgrey dark:border-night-border pb-4">
           <div>
-            <h2 className="font-serif text-2xl text-ink">{event.title}</h2>
+            <h2 className="font-serif text-2xl text-ink dark:text-ivory">{event.title}</h2>
             <div className="mt-2 flex flex-wrap gap-2">
               <span
                 className="rounded-full px-2.5 py-1 text-xs font-semibold text-white"
@@ -54,7 +54,7 @@ export function EventDetailModal({ event, open, onClose }: EventDetailModalProps
             <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">
               Client
             </p>
-            <p className="mt-1 font-medium text-ink">{event.clientName}</p>
+            <p className="mt-1 font-medium text-ink dark:text-ivory">{event.clientName}</p>
             <p className="mt-1">
               <a href={phoneHref} className="text-crimson hover:underline">
                 {event.clientPhone}
@@ -75,7 +75,7 @@ export function EventDetailModal({ event, open, onClose }: EventDetailModalProps
               <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">
                 Date & Time
               </p>
-              <p className="mt-1 text-ink">
+              <p className="mt-1 text-ink dark:text-ivory">
                 {format(new Date(event.date), 'EEEE, d MMMM yyyy')}
               </p>
               <p className="text-ink/70">{formatEventTimeRange(event)}</p>
@@ -84,13 +84,13 @@ export function EventDetailModal({ event, open, onClose }: EventDetailModalProps
               <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">
                 Venue
               </p>
-              <p className="mt-1 text-ink">{event.venue}</p>
+              <p className="mt-1 text-ink dark:text-ivory">{event.venue}</p>
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">
                 Guest Count
               </p>
-              <p className="mt-1 text-ink">{event.guestCount} guests</p>
+              <p className="mt-1 text-ink dark:text-ivory">{event.guestCount} guests</p>
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">
@@ -110,7 +110,7 @@ export function EventDetailModal({ event, open, onClose }: EventDetailModalProps
               {event.assignedTeam.map((member) => (
                 <div key={member} className="flex items-center gap-2">
                   <Avatar name={member} size="sm" />
-                  <span className="text-sm text-ink">{member}</span>
+                  <span className="text-sm text-ink dark:text-ivory">{member}</span>
                 </div>
               ))}
             </div>
@@ -120,24 +120,24 @@ export function EventDetailModal({ event, open, onClose }: EventDetailModalProps
             <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">
               Notes
             </p>
-            <p className="mt-1 rounded-lg bg-ivory p-3 text-ink/80">{event.notes}</p>
+            <p className="mt-1 rounded-lg bg-ivory dark:bg-night p-3 text-ink/80">{event.notes}</p>
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col gap-2 border-t border-coolgrey pt-4 sm:flex-row sm:flex-wrap">
+        <div className="mt-6 flex flex-col gap-2 border-t border-coolgrey dark:border-night-border pt-4 sm:flex-row sm:flex-wrap">
           <Button variant="primary" size="md">
             Edit Event
           </Button>
           <a
             href={phoneHref}
-            className="inline-flex h-10 items-center justify-center rounded-md border border-gold px-4 text-sm font-medium text-ink transition hover:bg-gold/10"
+            className="inline-flex h-10 items-center justify-center rounded-md border border-gold px-4 text-sm font-medium text-ink dark:text-ivory transition hover:bg-gold/10"
           >
             Call Client
           </a>
           {leadId ? (
             <Link
               href={`/leads/${leadId}`}
-              className="inline-flex h-10 items-center justify-center rounded-md px-4 text-sm font-medium text-ink transition hover:bg-ink/5"
+              className="inline-flex h-10 items-center justify-center rounded-md px-4 text-sm font-medium text-ink dark:text-ivory transition hover:bg-ink/5"
             >
               View Lead →
             </Link>

@@ -8,10 +8,10 @@ export function OverviewHeader() {
   return (
     <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
       <div>
-        <h2 className="font-serif text-[28px] leading-tight text-ink">
+        <h2 className="font-serif text-[28px] leading-tight text-ink dark:text-ivory">
           Good Morning, {OVERVIEW_USER.name.split(' ')[0]} 👋
         </h2>
-        <p className="mt-1 text-sm text-ink/60">{formattedDate}</p>
+        <p className="mt-1 text-sm text-ink/60 dark:text-ivory/60">{formattedDate}</p>
       </div>
 
       <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">

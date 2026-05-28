@@ -27,8 +27,8 @@ export function MonthView({
   const days = getMonthGridDays(currentDate);
 
   return (
-    <div className="overflow-hidden rounded-xl border border-coolgrey bg-white shadow-card">
-      <div className="grid grid-cols-7 border-b border-coolgrey bg-ivory">
+    <div className="overflow-hidden rounded-xl border border-coolgrey dark:border-night-border bg-white dark:bg-night-card shadow-card">
+      <div className="grid grid-cols-7 border-b border-coolgrey dark:border-night-border bg-ivory dark:bg-night">
         {DAY_HEADERS.map((label, index) => (
           <div
             key={`${label}-${index}`}
@@ -61,7 +61,7 @@ export function MonthView({
                 className={cn(
                   'inline-flex h-7 w-7 items-center justify-center rounded-full text-sm',
                   today && 'bg-crimson font-semibold text-white',
-                  !today && inMonth && 'text-ink',
+                  !today && inMonth && 'text-ink dark:text-ivory',
                   !today && !inMonth && 'text-ink/40'
                 )}
               >

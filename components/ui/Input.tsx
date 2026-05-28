@@ -18,7 +18,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {label ? (
           <label
             htmlFor={inputId}
-            className="mb-1.5 block text-sm font-medium text-ink"
+            className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory"
           >
             {label}
           </label>
@@ -26,7 +26,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
         <div className="relative">
           {icon ? (
-            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink/60">
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink/60 dark:text-ivory/60">
               {icon}
             </span>
           ) : null}
@@ -35,12 +35,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             id={inputId}
             ref={ref}
             className={cn(
-              'h-10 w-full rounded-md border bg-white px-3 text-sm text-ink outline-none transition dark:border-night-border dark:bg-night-surface dark:text-ivory',
+              'h-10 w-full rounded-md border bg-white dark:bg-night-card px-3 text-sm text-ink dark:text-ivory outline-none transition dark:border-night-border dark:bg-night-surface dark:text-ivory',
               'placeholder:text-ink/40',
               'focus:border-crimson focus:ring-2 focus:ring-crimson/20',
-              'disabled:bg-ivory-dark disabled:text-ink/60',
+              'disabled:bg-ivory-dark disabled:text-ink/60 dark:text-ivory/60',
               icon ? 'pl-10' : '',
-              error ? 'border-crimson focus:border-crimson' : 'border-coolgrey',
+              error ? 'border-crimson focus:border-crimson' : 'border-coolgrey dark:border-night-border',
               className
             )}
             {...props}

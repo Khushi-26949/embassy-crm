@@ -6,8 +6,8 @@ const pipeline = getPipelineSummary();
 
 export function PipelineSummary() {
   return (
-    <section className="flex h-full flex-col rounded-xl bg-white p-5 shadow-card">
-      <h3 className="font-serif text-lg text-ink">Pipeline Health</h3>
+    <section className="flex h-full flex-col rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+      <h3 className="font-serif text-lg text-ink dark:text-ivory">Pipeline Health</h3>
 
       <ul className="mt-4 flex flex-1 flex-col gap-4">
         {pipeline.stages.map((stage) => {
@@ -16,7 +16,7 @@ export function PipelineSummary() {
           return (
             <li key={stage.stage}>
               <div className="mb-1.5 flex items-center justify-between gap-2">
-                <span className="text-sm font-medium text-ink">{stage.stage}</span>
+                <span className="text-sm font-medium text-ink dark:text-ivory">{stage.stage}</span>
                 <span className="rounded-full bg-crimson/10 px-2 py-0.5 text-xs font-semibold text-crimson">
                   {stage.count}
                 </span>

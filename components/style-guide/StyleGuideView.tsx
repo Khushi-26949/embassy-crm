@@ -92,7 +92,7 @@ export function StyleGuideView() {
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {Object.entries(designTokens.typography.sizes).map(([key, size]) => (
-                <div key={key} className="rounded-lg bg-ivory p-3 dark:bg-night-surface">
+                <div key={key} className="rounded-lg bg-ivory dark:bg-night p-3 dark:bg-night-surface">
                   <p style={{ fontSize: size }} className="text-ink dark:text-ivory">
                     {key} · {size}px
                   </p>
@@ -193,7 +193,7 @@ export function StyleGuideView() {
               <div
                 key={label}
                 className={cn(
-                  'flex flex-col items-center gap-2 rounded-lg border border-coolgrey px-4 py-3 dark:border-night-border'
+                  'flex flex-col items-center gap-2 rounded-lg border border-coolgrey dark:border-night-border px-4 py-3 dark:border-night-border'
                 )}
               >
                 <Icon className="h-5 w-5 text-crimson" />

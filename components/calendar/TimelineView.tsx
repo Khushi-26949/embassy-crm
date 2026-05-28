@@ -28,10 +28,10 @@ export function TimelineView({ currentDate, onSelectEvent }: TimelineViewProps) 
   const hoveredEvent = timelineEvents.find((event) => event.id === hoveredId);
 
   return (
-    <div className="rounded-xl border border-coolgrey bg-white p-5 shadow-card">
+    <div className="rounded-xl border border-coolgrey dark:border-night-border bg-white dark:bg-night-card p-5 shadow-card">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <h3 className="font-serif text-lg text-ink">Timeline</h3>
-        <div className="flex gap-1 rounded-lg border border-coolgrey p-1">
+        <h3 className="font-serif text-lg text-ink dark:text-ivory">Timeline</h3>
+        <div className="flex gap-1 rounded-lg border border-coolgrey dark:border-night-border p-1">
           {(['week', 'month'] as TimelineZoom[]).map((level) => (
             <button
               key={level}
@@ -41,7 +41,7 @@ export function TimelineView({ currentDate, onSelectEvent }: TimelineViewProps) 
                 'rounded-md px-3 py-1 text-xs font-medium capitalize transition',
                 zoom === level
                   ? 'bg-crimson text-white'
-                  : 'text-ink/60 hover:bg-ivory'
+                  : 'text-ink/60 dark:text-ivory/60 hover:bg-ivory dark:bg-night'
               )}
             >
               {level}
@@ -55,7 +55,7 @@ export function TimelineView({ currentDate, onSelectEvent }: TimelineViewProps) 
           className="relative min-w-[720px]"
           style={{ minWidth: zoom === 'month' ? `${labels.length * 28}px` : '720px' }}
         >
-          <div className="flex border-b border-coolgrey pb-2">
+          <div className="flex border-b border-coolgrey dark:border-night-border pb-2">
             {labels.map((tick) => (
               <div
                 key={tick.date.toISOString()}
@@ -106,9 +106,9 @@ export function TimelineView({ currentDate, onSelectEvent }: TimelineViewProps) 
       </div>
 
       {hoveredEvent ? (
-        <div className="mt-4 rounded-lg border border-crimson bg-white px-3 py-2 text-xs shadow-card">
-          <p className="font-semibold text-ink">{hoveredEvent.title}</p>
-          <p className="text-ink/60">{hoveredEvent.clientName}</p>
+        <div className="mt-4 rounded-lg border border-crimson bg-white dark:bg-night-card px-3 py-2 text-xs shadow-card">
+          <p className="font-semibold text-ink dark:text-ivory">{hoveredEvent.title}</p>
+          <p className="text-ink/60 dark:text-ivory/60">{hoveredEvent.clientName}</p>
           <p className="mt-1 font-medium text-gold">
             {formatInr(hoveredEvent.revenue)}
           </p>

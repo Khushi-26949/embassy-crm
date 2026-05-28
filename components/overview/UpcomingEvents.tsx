@@ -6,14 +6,14 @@ const upcomingEvents = getUpcomingEvents(5);
 
 export function UpcomingEvents() {
   return (
-    <section className="rounded-xl bg-white p-5 shadow-card">
-      <h3 className="font-serif text-lg text-ink">Upcoming Events</h3>
+    <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+      <h3 className="font-serif text-lg text-ink dark:text-ivory">Upcoming Events</h3>
 
       <ul className="mt-4 divide-y divide-coolgrey/70">
         {upcomingEvents.map((event) => (
           <li
             key={event.id}
-            className="flex flex-col gap-2 py-3 transition first:pt-0 last:pb-0 hover:bg-ivory sm:flex-row sm:items-center sm:justify-between"
+            className="flex flex-col gap-2 py-3 transition first:pt-0 last:pb-0 hover:bg-ivory dark:bg-night sm:flex-row sm:items-center sm:justify-between"
           >
             <div className="flex min-w-0 items-start gap-3">
               <span
@@ -21,12 +21,12 @@ export function UpcomingEvents() {
                 style={{ backgroundColor: EVENT_CATEGORY_COLORS[event.category] }}
               />
               <div className="min-w-0">
-                <p className="truncate text-sm font-medium text-ink">{event.title}</p>
-                <p className="truncate text-xs text-ink/60">{event.clientName}</p>
+                <p className="truncate text-sm font-medium text-ink dark:text-ivory">{event.title}</p>
+                <p className="truncate text-xs text-ink/60 dark:text-ivory/60">{event.clientName}</p>
               </div>
             </div>
             <div className="flex items-center gap-2 pl-5 sm:pl-0">
-              <span className="text-xs text-ink/60">
+              <span className="text-xs text-ink/60 dark:text-ivory/60">
                 {format(new Date(event.date), 'd MMM yyyy')}
               </span>
               <span className="rounded-full bg-ivory-dark px-2 py-0.5 text-xs text-ink/70">

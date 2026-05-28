@@ -48,7 +48,7 @@ export function Table<T>({
                 <th
                   key={col.key}
                   className={cn(
-                    'sticky top-0 z-10 border-b border-coolgrey px-4 py-3 text-left text-xs font-semibold text-ink/80',
+                    'sticky top-0 z-10 border-b border-coolgrey dark:border-night-border px-4 py-3 text-left text-xs font-semibold text-ink/80',
                     col.widthClassName
                   )}
                 >
@@ -58,7 +58,7 @@ export function Table<T>({
                       onClick={() =>
                         onSortChange?.({ key: col.key, direction: nextDir })
                       }
-                      className="inline-flex items-center gap-2 hover:text-ink"
+                      className="inline-flex items-center gap-2 hover:text-ink dark:text-ivory"
                     >
                       <span>{col.header}</span>
                       <span className="text-[10px] text-ink/50">
@@ -78,14 +78,14 @@ export function Table<T>({
             <tr
               key={getRowKey?.(row, idx) ?? String(idx)}
               className={cn(
-                'transition hover:bg-ivory',
-                idx % 2 === 0 ? 'bg-white' : 'bg-ivory/40'
+                'transition hover:bg-ivory dark:bg-night',
+                idx % 2 === 0 ? 'bg-white dark:bg-night-card' : 'bg-ivory/40'
               )}
             >
               {columns.map((col) => (
                 <td
                   key={col.key}
-                  className="border-b border-coolgrey/60 px-4 py-3 text-sm text-ink"
+                  className="border-b border-coolgrey/60 px-4 py-3 text-sm text-ink dark:text-ivory"
                 >
                   {col.accessor(row)}
                 </td>

@@ -34,14 +34,14 @@ export function Modal({ open, onClose, title, children, className }: ModalProps)
         role="dialog"
         aria-modal="true"
         className={cn(
-          'relative flex max-h-[100dvh] w-full flex-col border-coolgrey bg-white shadow-elevated',
+          'relative flex max-h-[100dvh] w-full flex-col border-coolgrey dark:border-night-border bg-white dark:bg-night-card shadow-elevated',
           'animate-modal-in dark:border-night-border dark:bg-night-card',
           'h-full max-w-none rounded-none md:h-auto md:max-h-[90vh] md:max-w-lg md:rounded-lg',
           className
         )}
       >
         {title ? (
-          <div className="shrink-0 border-b border-coolgrey px-5 py-4 dark:border-night-border">
+          <div className="shrink-0 border-b border-coolgrey dark:border-night-border px-5 py-4 dark:border-night-border">
             <h2 className="font-serif text-xl text-ink dark:text-ivory">{title}</h2>
           </div>
         ) : null}

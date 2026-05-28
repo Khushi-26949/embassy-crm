@@ -38,11 +38,11 @@ const TABS: { id: ClientTab; label: string }[] = [
 
 function ClientReferralCard({ client }: { client: Client }) {
   return (
-    <div className="flex items-center justify-between gap-3 rounded-lg border border-coolgrey bg-white p-3">
+    <div className="flex items-center justify-between gap-3 rounded-lg border border-coolgrey dark:border-night-border bg-white dark:bg-night-card p-3">
       <div className="flex items-center gap-3">
         <Avatar name={client.name} size="md" />
         <div>
-          <p className="font-medium text-ink">{client.name}</p>
+          <p className="font-medium text-ink dark:text-ivory">{client.name}</p>
           <p className="text-xs text-gold">{formatInr(client.totalSpent)}</p>
         </div>
       </div>
@@ -123,10 +123,10 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
             .toUpperCase()}
         </div>
         <div className="flex-1">
-          <h2 className="font-serif text-[32px] leading-tight text-ink">
+          <h2 className="font-serif text-[32px] leading-tight text-ink dark:text-ivory">
             {client.name}
           </h2>
-          <p className="text-sm text-ink/60">
+          <p className="text-sm text-ink/60 dark:text-ivory/60">
             Since {formatClientSince(client.since)}
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-2">
@@ -149,15 +149,15 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
         ].map((stat) => (
           <article
             key={stat.label}
-            className="rounded-xl bg-white p-4 shadow-card"
+            className="rounded-xl bg-white dark:bg-night-card p-4 shadow-card"
           >
             <p className="text-xs text-ink/50">{stat.label}</p>
-            <p className="mt-1 text-sm font-semibold text-ink">{stat.value}</p>
+            <p className="mt-1 text-sm font-semibold text-ink dark:text-ivory">{stat.value}</p>
           </article>
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-1 rounded-lg border border-coolgrey bg-white p-1">
+      <div className="flex flex-wrap gap-1 rounded-lg border border-coolgrey dark:border-night-border bg-white dark:bg-night-card p-1">
         {TABS.map((item) => (
           <button
             key={item.id}
@@ -167,7 +167,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
               'rounded-md px-4 py-2 text-sm font-medium transition',
               tab === item.id
                 ? 'bg-crimson text-white'
-                : 'text-ink/60 hover:bg-ivory'
+                : 'text-ink/60 dark:text-ivory/60 hover:bg-ivory dark:bg-night'
             )}
           >
             {item.label}
@@ -177,8 +177,8 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
 
       {tab === 'overview' ? (
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <section className="rounded-xl bg-white p-5 shadow-card">
-            <h3 className="font-serif text-lg text-ink">Contact Details</h3>
+          <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Contact Details</h3>
             <dl className="mt-3 space-y-2 text-sm">
               <div>
                 <dt className="text-ink/50">Phone</dt>
@@ -202,31 +202,31 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
               {client.company ? (
                 <div>
                   <dt className="text-ink/50">Company</dt>
-                  <dd className="text-ink">{client.company}</dd>
+                  <dd className="text-ink dark:text-ivory">{client.company}</dd>
                 </div>
               ) : null}
             </dl>
           </section>
 
-          <section className="rounded-xl bg-white p-5 shadow-card">
-            <h3 className="font-serif text-lg text-ink">Relationship Manager</h3>
+          <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Relationship Manager</h3>
             {manager ? (
               <div className="mt-3 flex items-center gap-3">
                 <Avatar name={manager.name} size="md" />
                 <div>
-                  <p className="font-medium text-ink">{manager.name}</p>
-                  <p className="text-sm text-ink/60">{manager.role}</p>
+                  <p className="font-medium text-ink dark:text-ivory">{manager.name}</p>
+                  <p className="text-sm text-ink/60 dark:text-ivory/60">{manager.role}</p>
                 </div>
               </div>
             ) : (
-              <p className="mt-2 text-sm text-ink/60">
+              <p className="mt-2 text-sm text-ink/60 dark:text-ivory/60">
                 {client.relationshipManager}
               </p>
             )}
           </section>
 
-          <section className="rounded-xl bg-white p-5 shadow-card lg:col-span-2">
-            <h3 className="font-serif text-lg text-ink">Recent Activity</h3>
+          <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card lg:col-span-2">
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Recent Activity</h3>
             <ul className="mt-3 space-y-3">
               {recentActivities.map((activity) => {
                 const config = ACTIVITY_CONFIG[activity.type];
@@ -234,7 +234,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
                 return (
                   <li
                     key={activity.id}
-                    className="flex items-start gap-3 rounded-lg bg-ivory p-3"
+                    className="flex items-start gap-3 rounded-lg bg-ivory dark:bg-night p-3"
                   >
                     <span
                       className={cn(
@@ -245,7 +245,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
                       <Icon className="h-4 w-4" />
                     </span>
                     <div>
-                      <p className="text-sm text-ink">{activity.description}</p>
+                      <p className="text-sm text-ink dark:text-ivory">{activity.description}</p>
                       <p className="text-xs text-ink/50">
                         {activity.leadName} · by {activity.doneBy}
                       </p>
@@ -259,11 +259,11 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
       ) : null}
 
       {tab === 'history' ? (
-        <section className="rounded-xl bg-white p-5 shadow-card">
+        <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[720px] text-sm">
               <thead>
-                <tr className="border-b border-coolgrey text-left text-xs text-ink/50">
+                <tr className="border-b border-coolgrey dark:border-night-border text-left text-xs text-ink/50">
                   <th className="py-2 font-semibold">Event Name</th>
                   <th className="py-2 font-semibold">
                     <button type="button" onClick={() => toggleSort('date')}>
@@ -296,7 +296,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
               </tbody>
             </table>
           </div>
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-coolgrey pt-4">
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-coolgrey dark:border-night-border pt-4">
             <p className="font-semibold text-gold">
               Total revenue: {formatInr(historyTotal)}
             </p>
@@ -305,7 +305,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
                 type="button"
                 disabled={page <= 1}
                 onClick={() => setPage((p) => p - 1)}
-                className="rounded border border-coolgrey px-3 py-1 disabled:opacity-40"
+                className="rounded border border-coolgrey dark:border-night-border px-3 py-1 disabled:opacity-40"
               >
                 Previous
               </button>
@@ -316,7 +316,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
                 type="button"
                 disabled={page >= totalPages}
                 onClick={() => setPage((p) => p + 1)}
-                className="rounded border border-coolgrey px-3 py-1 disabled:opacity-40"
+                className="rounded border border-coolgrey dark:border-night-border px-3 py-1 disabled:opacity-40"
               >
                 Next
               </button>
@@ -326,9 +326,9 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
       ) : null}
 
       {tab === 'preferences' ? (
-        <section className="space-y-6 rounded-xl bg-white p-5 shadow-card">
+        <section className="space-y-6 rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
           <div>
-            <h3 className="font-serif text-lg text-ink">Cuisine Preferences</h3>
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Cuisine Preferences</h3>
             <div className="mt-2 flex flex-wrap gap-2">
               {client.preferredCuisine.map((cuisine) => (
                 <span
@@ -341,7 +341,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
             </div>
           </div>
           <div>
-            <h3 className="font-serif text-lg text-ink">Dietary Restrictions</h3>
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Dietary Restrictions</h3>
             <div className="mt-2 flex flex-wrap gap-2">
               {client.dietaryRestrictions.length > 0 ? (
                 client.dietaryRestrictions.map((item) => (
@@ -355,10 +355,10 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
             </div>
           </div>
           <div>
-            <h3 className="font-serif text-lg text-ink">Venue Preferences</h3>
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Venue Preferences</h3>
             <ul className="mt-2 space-y-2">
               {client.venuePreferences.map((venue) => (
-                <li key={venue} className="flex items-center gap-2 text-sm text-ink">
+                <li key={venue} className="flex items-center gap-2 text-sm text-ink dark:text-ivory">
                   <MapPin className="h-4 w-4 text-crimson" />
                   {venue}
                 </li>
@@ -366,7 +366,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
             </ul>
           </div>
           <div>
-            <h3 className="font-serif text-lg text-ink">Budget Range</h3>
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Budget Range</h3>
             <div className="mt-3">
               <div className="relative h-3 overflow-hidden rounded-full bg-coolgrey">
                 <div
@@ -377,15 +377,15 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
                   }}
                 />
               </div>
-              <div className="mt-2 flex justify-between text-xs text-ink/60">
+              <div className="mt-2 flex justify-between text-xs text-ink/60 dark:text-ivory/60">
                 <span>{formatInr(client.budgetRange.min)}</span>
                 <span>{formatInr(client.budgetRange.max)}</span>
               </div>
             </div>
           </div>
           <div>
-            <h3 className="font-serif text-lg text-ink">Special Notes</h3>
-            <p className="mt-2 rounded-lg bg-ivory p-4 text-sm text-ink/80">
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Special Notes</h3>
+            <p className="mt-2 rounded-lg bg-ivory dark:bg-night p-4 text-sm text-ink/80">
               {client.specialNotes}
             </p>
           </div>
@@ -396,7 +396,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
         <section className="space-y-6">
           {referrer ? (
             <div>
-              <h3 className="font-serif text-lg text-ink">Referred by</h3>
+              <h3 className="font-serif text-lg text-ink dark:text-ivory">Referred by</h3>
               <div className="mt-3">
                 <ClientReferralCard client={referrer} />
               </div>
@@ -404,7 +404,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
           ) : null}
 
           <div>
-            <h3 className="font-serif text-lg text-ink">Clients Referred</h3>
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Clients Referred</h3>
             <div className="mt-3 space-y-3">
               {referredClients.length > 0 ? (
                 referredClients.map((referred) => (
@@ -420,11 +420,11 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
             Total referral value: {formatInr(referralValue)}
           </p>
 
-          <div className="rounded-xl border border-coolgrey bg-white p-6 shadow-card">
-            <h3 className="mb-4 font-serif text-lg text-ink">Referral Tree</h3>
+          <div className="rounded-xl border border-coolgrey dark:border-night-border bg-white dark:bg-night-card p-6 shadow-card">
+            <h3 className="mb-4 font-serif text-lg text-ink dark:text-ivory">Referral Tree</h3>
             <div className="flex flex-col items-center">
               <div className="rounded-lg border-2 border-crimson bg-crimson/5 px-4 py-2 text-center">
-                <p className="font-medium text-ink">{client.name}</p>
+                <p className="font-medium text-ink dark:text-ivory">{client.name}</p>
               </div>
               {referrer || referredClients.length > 0 ? (
                 <div className="my-2 h-6 w-px bg-coolgrey" />
@@ -441,7 +441,7 @@ export function ClientDetailView({ initialClient }: ClientDetailViewProps) {
                 {referredClients.map((referred) => (
                   <div key={referred.id} className="flex flex-col items-center">
                     <span className="mb-1 text-xs text-ink/50">Referred</span>
-                    <div className="rounded-lg border border-coolgrey bg-ivory px-3 py-2 text-sm">
+                    <div className="rounded-lg border border-coolgrey dark:border-night-border bg-ivory dark:bg-night px-3 py-2 text-sm">
                       {referred.name}
                     </div>
                   </div>
@@ -470,7 +470,7 @@ function EventHistoryRow({
         className="cursor-pointer border-b border-coolgrey/60 hover:bg-ivory/60"
         onClick={onToggle}
       >
-        <td className="py-3 font-medium text-ink">{event.title}</td>
+        <td className="py-3 font-medium text-ink dark:text-ivory">{event.title}</td>
         <td className="py-3 text-ink/70">
           {format(new Date(event.date), 'd MMM yyyy')}
         </td>

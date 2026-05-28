@@ -166,8 +166,8 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
       />
 
       <div className="relative mx-auto mt-16 w-full max-w-2xl px-4">
-        <div className="overflow-hidden rounded-xl border border-coolgrey bg-white shadow-elevated">
-          <div className="flex items-center gap-3 border-b border-coolgrey px-4 py-3">
+        <div className="overflow-hidden rounded-xl border border-coolgrey dark:border-night-border bg-white dark:bg-night-card shadow-elevated">
+          <div className="flex items-center gap-3 border-b border-coolgrey dark:border-night-border px-4 py-3">
             <Search className="h-5 w-5 shrink-0 text-ink/40" />
             <input
               ref={inputRef}
@@ -175,13 +175,13 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search clients, events, leads..."
-              className="flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-ink/40"
+              className="flex-1 bg-transparent text-sm text-ink dark:text-ivory outline-none placeholder:text-ink/40"
             />
             <button
               type="button"
               onClick={onClose}
               aria-label="Close"
-              className="rounded-md p-1 text-ink/50 hover:bg-ivory hover:text-ink"
+              className="rounded-md p-1 text-ink/50 hover:bg-ivory dark:bg-night hover:text-ink dark:text-ivory"
             >
               <X className="h-5 w-5" />
             </button>
@@ -222,13 +222,13 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
                               onClick={() => selectResult(item)}
                               className={cn(
                                 'flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition',
-                                isActive ? 'bg-crimson/10 text-crimson' : 'hover:bg-ivory'
+                                isActive ? 'bg-crimson/10 text-crimson' : 'hover:bg-ivory dark:bg-night'
                               )}
                             >
                               <Icon className="h-4 w-4 shrink-0 opacity-60" />
                               <div className="min-w-0 flex-1">
                                 <p className="truncate text-sm font-medium">{item.title}</p>
-                                <p className="truncate text-xs text-ink/60">{item.subtitle}</p>
+                                <p className="truncate text-xs text-ink/60 dark:text-ivory/60">{item.subtitle}</p>
                               </div>
                             </button>
                           </li>
@@ -241,7 +241,7 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
             )}
           </div>
 
-          <div className="border-t border-coolgrey px-4 py-2 text-xs text-ink/40">
+          <div className="border-t border-coolgrey dark:border-night-border px-4 py-2 text-xs text-ink/40">
             <span className="hidden sm:inline">↑↓ navigate · Enter select · </span>ESC close
           </div>
         </div>

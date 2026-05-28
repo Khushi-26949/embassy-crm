@@ -32,10 +32,10 @@ export function AnalyticsView() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <h2 className="font-serif text-2xl text-ink">Analytics & Insights</h2>
+        <h2 className="font-serif text-2xl text-ink dark:text-ivory">Analytics & Insights</h2>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <div className="flex flex-wrap gap-1 rounded-lg border border-coolgrey bg-white p-1">
+          <div className="flex flex-wrap gap-1 rounded-lg border border-coolgrey dark:border-night-border bg-white dark:bg-night-card p-1">
             {DATE_RANGES.map((item) => (
               <button
                 key={item.id}
@@ -45,7 +45,7 @@ export function AnalyticsView() {
                   'rounded-md px-3 py-1.5 text-xs font-medium transition',
                   range === item.id
                     ? 'bg-crimson text-white'
-                    : 'text-ink/60 hover:bg-ivory hover:text-crimson'
+                    : 'text-ink/60 dark:text-ivory/60 hover:bg-ivory dark:bg-night hover:text-crimson'
                 )}
               >
                 {item.label}
@@ -64,19 +64,19 @@ export function AnalyticsView() {
 
         {range === 'custom' && (
           <div
-            className="mt-3 flex items-center gap-3 rounded-lg border border-coolgrey bg-ivory p-3"
+            className="mt-3 flex items-center gap-3 rounded-lg border border-coolgrey dark:border-night-border bg-ivory dark:bg-night p-3"
           >
-            <label className="text-sm text-ink/60">From:</label>
+            <label className="text-sm text-ink/60 dark:text-ivory/60">From:</label>
             <input
               type="month"
               defaultValue="2024-01"
-              className="rounded-lg border border-coolgrey bg-white px-3 py-1.5 text-sm outline-none focus:border-crimson"
+              className="rounded-lg border border-coolgrey dark:border-night-border bg-white dark:bg-night-card px-3 py-1.5 text-sm outline-none focus:border-crimson"
             />
-            <label className="text-sm text-ink/60">To:</label>
+            <label className="text-sm text-ink/60 dark:text-ivory/60">To:</label>
             <input
               type="month"
               defaultValue="2024-12"
-              className="rounded-lg border border-coolgrey bg-white px-3 py-1.5 text-sm outline-none focus:border-crimson"
+              className="rounded-lg border border-coolgrey dark:border-night-border bg-white dark:bg-night-card px-3 py-1.5 text-sm outline-none focus:border-crimson"
             />
             <button
               type="button"

@@ -35,8 +35,8 @@ export function AnalyticsKpiCards({ range }: AnalyticsKpiCardsProps) {
           key={card.title}
           className="embassy-card-hover p-5"
         >
-          <p className="text-sm text-ink/60">{card.title}</p>
-          <p className="mt-2 font-serif text-2xl font-semibold text-ink">
+          <p className="text-sm text-ink/60 dark:text-ivory/60">{card.title}</p>
+          <p className="mt-2 font-serif text-2xl font-semibold text-ink dark:text-ivory">
             {card.value}
           </p>
         </article>

@@ -25,7 +25,7 @@ export interface PipelineFiltersProps {
 }
 
 const selectClassName = cn(
-  'h-10 w-full rounded-md border border-coolgrey bg-white px-3 text-sm text-ink outline-none transition',
+  'h-10 w-full rounded-md border border-coolgrey dark:border-night-border bg-white dark:bg-night-card dark:bg-night-surface px-3 text-sm text-ink dark:text-ivory outline-none transition',
   'focus:border-crimson focus:ring-2 focus:ring-crimson/20'
 );
 
@@ -35,7 +35,7 @@ export function PipelineFilters({ filters, onChange }: PipelineFiltersProps) {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-3 rounded-xl border border-coolgrey bg-white p-4 shadow-card sm:grid-cols-2 lg:grid-cols-5">
+    <div className="grid grid-cols-1 gap-3 rounded-xl border border-coolgrey dark:border-night-border bg-white dark:bg-night-card p-4 shadow-card sm:grid-cols-2 lg:grid-cols-5">
       <Input
         label="Search"
         placeholder="Name, email, phone..."
@@ -45,7 +45,7 @@ export function PipelineFilters({ filters, onChange }: PipelineFiltersProps) {
       />
 
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-ink">
+        <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
           Event Type
         </label>
         <select
@@ -63,7 +63,7 @@ export function PipelineFilters({ filters, onChange }: PipelineFiltersProps) {
       </div>
 
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-ink">
+        <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
           Assigned To
         </label>
         <select
@@ -81,7 +81,7 @@ export function PipelineFilters({ filters, onChange }: PipelineFiltersProps) {
       </div>
 
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-ink">
+        <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
           Event From
         </label>
         <input
@@ -93,7 +93,7 @@ export function PipelineFilters({ filters, onChange }: PipelineFiltersProps) {
       </div>
 
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-ink">
+        <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
           Event To
         </label>
         <input

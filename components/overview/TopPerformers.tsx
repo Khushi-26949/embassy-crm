@@ -7,13 +7,13 @@ const performers = getTopPerformers();
 
 export function TopPerformers() {
   return (
-    <section className="rounded-xl bg-white p-5 shadow-card">
-      <h3 className="font-serif text-lg text-ink">Team Performance</h3>
+    <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+      <h3 className="font-serif text-lg text-ink dark:text-ivory">Team Performance</h3>
 
       <div className="mt-4 overflow-x-auto">
         <table className="w-full min-w-[320px] text-sm">
           <thead>
-            <tr className="border-b border-coolgrey text-left text-xs text-ink/50">
+            <tr className="border-b border-coolgrey dark:border-night-border text-left text-xs text-ink/50">
               <th className="pb-2 pr-2 font-medium">Rank</th>
               <th className="pb-2 pr-2 font-medium">Member</th>
               <th className="pb-2 pr-2 font-medium">Closed</th>
@@ -40,16 +40,16 @@ export function TopPerformers() {
                     <div className="flex items-center gap-2">
                       <Avatar name={member.name} size="sm" />
                       <div className="min-w-0">
-                        <p className="truncate font-medium text-ink">{member.name}</p>
+                        <p className="truncate font-medium text-ink dark:text-ivory">{member.name}</p>
                         <p className="truncate text-xs text-ink/50">{member.role}</p>
                       </div>
                     </div>
                   </td>
-                  <td className="py-3 pr-2 text-ink">{member.leadsConverted}</td>
-                  <td className="py-3 pr-2 text-ink">{formatInr(member.revenue)}</td>
+                  <td className="py-3 pr-2 text-ink dark:text-ivory">{member.leadsConverted}</td>
+                  <td className="py-3 pr-2 text-ink dark:text-ivory">{formatInr(member.revenue)}</td>
                   <td className="py-3">
                     <div className="flex min-w-[88px] flex-col gap-1">
-                      <span className="text-xs font-medium text-ink">
+                      <span className="text-xs font-medium text-ink dark:text-ivory">
                         {Math.round(member.targetPercent)}%
                       </span>
                       <div className="h-1.5 overflow-hidden rounded-full bg-coolgrey">

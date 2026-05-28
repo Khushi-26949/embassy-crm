@@ -68,13 +68,13 @@ export function TeamPerformanceTable() {
   };
 
   return (
-    <section className="rounded-xl bg-white p-5 shadow-card">
-      <h3 className="font-serif text-lg text-ink">Team Performance</h3>
+    <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+      <h3 className="font-serif text-lg text-ink dark:text-ivory">Team Performance</h3>
 
       <div className="mt-4 overflow-x-auto">
         <table className="w-full min-w-[900px] border-separate border-spacing-0 text-sm">
           <thead>
-            <tr className="bg-ivory-dark text-left text-xs text-ink/60">
+            <tr className="bg-ivory-dark text-left text-xs text-ink/60 dark:text-ivory/60">
               {(
                 [
                   ['rank', 'Rank'],
@@ -89,7 +89,7 @@ export function TeamPerformanceTable() {
                 <th
                   key={key}
                   className={cn(
-                    'border-b border-coolgrey px-3 py-3 font-semibold',
+                    'border-b border-coolgrey dark:border-night-border px-3 py-3 font-semibold',
                     key === 'rank' &&
                       'sticky left-0 z-10 bg-ivory-dark dark:bg-night-surface'
                   )}
@@ -97,7 +97,7 @@ export function TeamPerformanceTable() {
                   <button
                     type="button"
                     onClick={() => toggleSort(key)}
-                    className="inline-flex items-center gap-1 hover:text-ink"
+                    className="inline-flex items-center gap-1 hover:text-ink dark:text-ivory"
                   >
                     {label}
                     <span className="text-[10px]">{sortIndicator(key)}</span>
@@ -132,7 +132,7 @@ export function TeamPerformanceTable() {
                     <div className="flex items-center gap-2">
                       <Avatar name={member.name} size="sm" />
                       <div>
-                        <p className="font-medium text-ink">{member.name}</p>
+                        <p className="font-medium text-ink dark:text-ivory">{member.name}</p>
                         <p className="text-xs text-ink/50">{member.role}</p>
                       </div>
                     </div>
@@ -173,7 +173,7 @@ export function TeamPerformanceTable() {
         </table>
       </div>
 
-      <div className="mt-4 flex items-center justify-between text-xs text-ink/60">
+      <div className="mt-4 flex items-center justify-between text-xs text-ink/60 dark:text-ivory/60">
         <span>
           Page {page} of {totalPages}
         </span>
@@ -182,7 +182,7 @@ export function TeamPerformanceTable() {
             type="button"
             disabled={page <= 1}
             onClick={() => setPage((p) => p - 1)}
-            className="rounded-md border border-coolgrey px-3 py-1.5 disabled:opacity-40"
+            className="rounded-md border border-coolgrey dark:border-night-border px-3 py-1.5 disabled:opacity-40"
           >
             Previous
           </button>
@@ -190,7 +190,7 @@ export function TeamPerformanceTable() {
             type="button"
             disabled={page >= totalPages}
             onClick={() => setPage((p) => p + 1)}
-            className="rounded-md border border-coolgrey px-3 py-1.5 disabled:opacity-40"
+            className="rounded-md border border-coolgrey dark:border-night-border px-3 py-1.5 disabled:opacity-40"
           >
             Next
           </button>

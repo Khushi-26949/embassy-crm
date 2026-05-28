@@ -57,8 +57,8 @@ export function KpiCards() {
           >
             <div className="flex items-start justify-between gap-3">
               <div>
-                <p className="text-sm text-ink/60">{card.title}</p>
-                <p className="mt-2 font-serif text-2xl font-semibold text-ink">
+                <p className="text-sm text-ink/60 dark:text-ivory/60">{card.title}</p>
+                <p className="mt-2 font-serif text-2xl font-semibold text-ink dark:text-ivory">
                   {card.value}
                 </p>
                 <p className={cn('mt-1 text-xs font-medium', card.accent)}>

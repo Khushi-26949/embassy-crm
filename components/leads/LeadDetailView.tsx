@@ -114,7 +114,7 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
   );
 
   const selectClass =
-    'h-10 w-full rounded-md border border-coolgrey bg-white px-3 text-sm text-ink outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20';
+    'h-10 w-full rounded-md border border-coolgrey dark:border-night-border bg-white dark:bg-night-card dark:bg-night-surface px-3 text-sm text-ink dark:text-ivory outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20';
 
   return (
     <div className="space-y-6">
@@ -122,13 +122,13 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
         <div className="flex items-start gap-3">
           <Link
             href="/leads"
-            className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-ink/60 hover:text-crimson"
+            className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-ink/60 dark:text-ivory/60 hover:text-crimson"
           >
             <ArrowLeft className="h-4 w-4" />
             Back
           </Link>
           <div>
-            <h2 className="font-serif text-[28px] leading-tight text-ink">
+            <h2 className="font-serif text-[28px] leading-tight text-ink dark:text-ivory">
               {lead.clientName}
             </h2>
             <div className="mt-2 flex flex-wrap gap-2">
@@ -164,10 +164,10 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-5">
         <div className="space-y-6 xl:col-span-3">
-          <section className="rounded-xl bg-white p-5 shadow-card">
+          <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <h3 className="font-serif text-lg text-ink">{lead.clientName}</h3>
+                <h3 className="font-serif text-lg text-ink dark:text-ivory">{lead.clientName}</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span
                     className={cn(
@@ -264,7 +264,7 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
                   {formatInr(lead.budget)}
                 </div>
                 {client ? (
-                  <p className="text-ink/60">
+                  <p className="text-ink/60 dark:text-ivory/60">
                     Venue: {client.venuePreferences.join(', ')} · Cuisine:{' '}
                     {client.preferredCuisine.join(', ')}
                   </p>
@@ -273,9 +273,9 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
             )}
           </section>
 
-          <section className="rounded-xl bg-white p-5 shadow-card">
+          <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
             <div className="flex items-center justify-between gap-3">
-              <h3 className="font-serif text-lg text-ink">Activity Timeline</h3>
+              <h3 className="font-serif text-lg text-ink dark:text-ivory">Activity Timeline</h3>
               <Button
                 variant="primary"
                 size="sm"
@@ -286,10 +286,10 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
             </div>
 
             {showActivityForm ? (
-              <div className="mt-4 space-y-3 rounded-lg border border-coolgrey bg-ivory p-4">
+              <div className="mt-4 space-y-3 rounded-lg border border-coolgrey dark:border-night-border bg-ivory dark:bg-night p-4">
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-ink">Type</label>
+                    <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">Type</label>
                     <select
                       value={activityType}
                       onChange={(e) =>
@@ -312,7 +312,7 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
                   />
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-sm font-medium text-ink">Notes</label>
+                  <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">Notes</label>
                   <textarea
                     value={activityNotes}
                     onChange={(e) => setActivityNotes(e.target.value)}
@@ -341,7 +341,7 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
                       <Icon className="h-4 w-4" />
                     </span>
                     <div className="min-w-0 flex-1 pl-6">
-                      <p className="text-sm text-ink">{activity.description}</p>
+                      <p className="text-sm text-ink dark:text-ivory">{activity.description}</p>
                       <p className="mt-0.5 text-xs text-ink/50">
                         by {activity.doneBy} ·{' '}
                         {formatDistanceToNow(new Date(activity.timestamp), {
@@ -355,8 +355,8 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
             </ul>
           </section>
 
-          <section className="rounded-xl bg-white p-5 shadow-card">
-            <h3 className="font-serif text-lg text-ink">Notes</h3>
+          <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Notes</h3>
             <p className="mt-2 whitespace-pre-wrap text-sm text-ink/70">{lead.notes}</p>
             <textarea
               value={notes}
@@ -371,8 +371,8 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
         </div>
 
         <div className="space-y-6 xl:col-span-2">
-          <section className="rounded-xl bg-white p-5 shadow-card">
-            <h3 className="font-serif text-lg text-ink">Quick Actions</h3>
+          <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Quick Actions</h3>
             <div className="mt-4 space-y-2">
               <a
                 href={phoneHref}
@@ -382,7 +382,7 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
               </a>
               <a
                 href={`mailto:${lead.email}`}
-                className="flex w-full items-center justify-center rounded-md border border-gold px-4 py-2.5 text-sm font-medium text-ink hover:bg-gold/10"
+                className="flex w-full items-center justify-center rounded-md border border-gold px-4 py-2.5 text-sm font-medium text-ink dark:text-ivory hover:bg-gold/10"
               >
                 ✉️ Send Email
               </a>
@@ -415,10 +415,10 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
             </div>
           </section>
 
-          <section className="rounded-xl bg-white p-5 shadow-card">
-            <h3 className="font-serif text-lg text-ink">Next Follow-up</h3>
+          <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+            <h3 className="font-serif text-lg text-ink dark:text-ivory">Next Follow-up</h3>
             {reminder ? (
-              <p className="mt-2 rounded-lg bg-ivory p-3 text-sm text-ink/70">
+              <p className="mt-2 rounded-lg bg-ivory dark:bg-night p-3 text-sm text-ink/70">
                 {reminder.type} on {reminder.date} at {reminder.time}
               </p>
             ) : (
@@ -440,7 +440,7 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-ink">
+                <label className="mb-1.5 block text-sm font-medium text-ink dark:text-ivory">
                   Reminder type
                 </label>
                 <select
@@ -461,9 +461,9 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
             </div>
           </section>
 
-          <section className="rounded-xl bg-white p-5 shadow-card">
+          <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
             <div className="flex items-center justify-between gap-2">
-              <h3 className="font-serif text-lg text-ink">Documents</h3>
+              <h3 className="font-serif text-lg text-ink dark:text-ivory">Documents</h3>
               <Button variant="ghost" size="sm">
                 + Upload
               </Button>
@@ -477,7 +477,7 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
                   <div className="flex min-w-0 items-center gap-3">
                     <FileText className="h-5 w-5 shrink-0 text-crimson" />
                     <div className="min-w-0">
-                      <p className="truncate text-sm font-medium text-ink">{doc.name}</p>
+                      <p className="truncate text-sm font-medium text-ink dark:text-ivory">{doc.name}</p>
                       <p className="text-xs text-ink/50">
                         {doc.type} · {doc.size}
                       </p>
@@ -493,9 +493,9 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 flex flex-col items-center justify-center rounded-lg border border-dashed border-coolgrey bg-ivory px-4 py-8 text-center">
+            <div className="mt-4 flex flex-col items-center justify-center rounded-lg border border-dashed border-coolgrey dark:border-night-border bg-ivory dark:bg-night px-4 py-8 text-center">
               <UploadCloud className="h-8 w-8 text-ink/30" />
-              <p className="mt-2 text-sm text-ink/60">
+              <p className="mt-2 text-sm text-ink/60 dark:text-ivory/60">
                 Drop files here or click to upload
               </p>
               <p className="mt-1 text-xs text-ink/40">
@@ -505,8 +505,8 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
           </section>
 
           {client ? (
-            <section className="rounded-xl bg-white p-5 shadow-card">
-              <h3 className="font-serif text-lg text-ink">Event Details</h3>
+            <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card">
+              <h3 className="font-serif text-lg text-ink dark:text-ivory">Event Details</h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {client.venuePreferences.map((venue) => (
                   <Badge key={venue} variant="info">

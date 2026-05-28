@@ -1,0 +1,49 @@
+import re
+from pathlib import Path
+
+root = Path(__file__).resolve().parent.parent
+file_paths = [p for p in root.rglob('*') if p.suffix in {'.ts', '.tsx'} and 'node_modules' not in p.parts]
+
+patterns = [
+    (re.compile(r'(?<![\w\-])text-ink(?![\w\-/])'), 'text-ink dark:text-ivory'),
+    (re.compile(r'(?<![\w\-])text-ink/60(?![\w\-/])'), 'text-ink/60 dark:text-ivory/60'),
+    (re.compile(r'(?<![\w\-])bg-white(?![\w\-/])'), 'bg-white dark:bg-night-card'),
+    (re.compile(r'(?<![\w\-])border-coolgrey(?![\w\-/])'), 'border-coolgrey dark:border-night-border'),
+    (re.compile(r'(?<![\w\-])bg-ivory(?![\w\-/])'), 'bg-ivory dark:bg-night'),
+]
+
+file_changes = []
+string_pattern = re.compile(r'(["\'])([^"\n]*)\1')
+
+for path in file_paths:
+    text = path.read_text(encoding='utf-8')
+    original = text
+
+    def replace_in_string_literal(match):
+        quote = match.group(1)
+        content = match.group(2)
+        orig = content
+
+        if 'bg-white' in content and 'border-coolgrey' in content and 'text-ink' in content:
+            if 'dark:bg-night-surface' not in content:
+                content = content.replace('bg-white', 'bg-white dark:bg-night-surface')
+            if 'dark:border-night-border' not in content:
+                content = content.replace('border-coolgrey', 'border-coolgrey dark:border-night-border')
+            if 'dark:text-ivory' not in content and 'text-ink/60' not in content:
+                content = content.replace('text-ink', 'text-ink dark:text-ivory')
+
+        for pattern, replacement in patterns:
+            if replacement in content:
+                continue
+            content = pattern.sub(replacement, content)
+
+        return quote + content + quote if content != orig else match.group(0)
+
+    text = string_pattern.sub(replace_in_string_literal, text)
+    if text != original:
+        path.write_text(text, encoding='utf-8')
+        file_changes.append(path)
+
+print(f'Updated {len(file_changes)} files:')
+for p in file_changes:
+    print(p.relative_to(root))

@@ -23,9 +23,9 @@ export function EventCategoryChart({ range }: EventCategoryChartProps) {
   const data = getEventCategoryBreakdown(range);
 
   return (
-    <section className="rounded-xl bg-white p-5 shadow-card">
-      <h3 className="font-serif text-lg text-ink">Revenue by Event Category</h3>
-      <div className="mt-4 h-[320px] w-full min-w-0">
+    <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card w-full min-w-0 overflow-hidden">
+      <h3 className="font-serif text-lg text-ink dark:text-ivory">Revenue by Event Category</h3>
+      <div className="mt-4 h-[320px] w-full min-w-0 overflow-hidden">
         <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <BarChart
             layout="vertical"

@@ -16,9 +16,9 @@ function SourceTooltip({
   const item = payload[0].payload;
 
   return (
-    <div className="rounded-lg border border-coolgrey bg-white px-3 py-2 text-xs shadow-card">
-      <p className="font-medium text-ink">{item.name}</p>
-      <p className="text-ink/60">
+    <div className="rounded-lg border border-coolgrey dark:border-night-border bg-white dark:bg-night-card px-3 py-2 text-xs shadow-card">
+      <p className="font-medium text-ink dark:text-ivory">{item.name}</p>
+      <p className="text-ink/60 dark:text-ivory/60">
         {item.value} leads · {item.percentage}%
       </p>
     </div>
@@ -27,10 +27,10 @@ function SourceTooltip({
 
 export function LeadSourcesChart() {
   return (
-    <section className="rounded-xl bg-white p-5 shadow-card">
-      <h3 className="font-serif text-lg text-ink">Lead Sources</h3>
+    <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card w-full min-w-0 overflow-hidden">
+      <h3 className="font-serif text-lg text-ink dark:text-ivory">Lead Sources</h3>
 
-      <div className="mt-2 h-[220px] w-full min-w-0">
+      <div className="mt-2 h-[220px] w-full min-w-0 overflow-hidden">
         <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <PieChart>
             <Pie
@@ -61,9 +61,9 @@ export function LeadSourcesChart() {
                 className="h-2.5 w-2.5 shrink-0 rounded-full"
                 style={{ backgroundColor: source.fill }}
               />
-              <span className="truncate text-ink">{source.name}</span>
+              <span className="truncate text-ink dark:text-ivory">{source.name}</span>
             </div>
-            <span className="shrink-0 text-xs text-ink/60">
+            <span className="shrink-0 text-xs text-ink/60 dark:text-ivory/60">
               {source.value} · {source.percentage}%
             </span>
           </li>

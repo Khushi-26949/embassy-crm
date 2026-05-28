@@ -175,8 +175,8 @@ export function PipelineView() {
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h2 className="font-serif text-2xl text-ink">Sales Pipeline</h2>
-          <p className="mt-1 text-sm text-ink/60">
+          <h2 className="font-serif text-2xl text-ink dark:text-ivory">Sales Pipeline</h2>
+          <p className="mt-1 text-sm text-ink/60 dark:text-ivory/60">
             Total pipeline value:{' '}
             <span className="font-semibold text-gold">
               {formatInr(totalPipelineValue)}

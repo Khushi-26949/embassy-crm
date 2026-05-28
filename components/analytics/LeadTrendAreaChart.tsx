@@ -21,11 +21,11 @@ export function LeadTrendAreaChart({ range }: LeadTrendAreaChartProps) {
   const data = getLeadTrendData(range);
 
   return (
-    <section className="rounded-xl bg-white p-5 shadow-card">
-      <h3 className="font-serif text-lg text-ink">
+    <section className="rounded-xl bg-white dark:bg-night-card p-5 shadow-card w-full min-w-0 overflow-hidden">
+      <h3 className="font-serif text-lg text-ink dark:text-ivory">
         Lead Acquisition & Conversion Trends
       </h3>
-      <div className="mt-4 h-[320px] w-full min-w-0">
+      <div className="mt-4 h-[320px] w-full min-w-0 overflow-hidden">
         <ResponsiveContainer width="100%" height="100%" minWidth={1}>
           <AreaChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
             <CartesianGrid stroke="#E5E5E5" strokeDasharray="3 3" />

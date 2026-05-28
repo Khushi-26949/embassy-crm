@@ -42,25 +42,25 @@ export function CalendarView() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
-        <h2 className="font-serif text-2xl text-ink">Event Calendar</h2>
+        <h2 className="font-serif text-2xl text-ink dark:text-ivory">Event Calendar</h2>
 
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between xl:flex-1 xl:justify-end">
           <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
               onClick={() => setCurrentDate((d) => subMonths(d, 1))}
-              className="rounded-md border border-coolgrey px-3 py-2 text-sm text-ink hover:bg-ivory"
+              className="rounded-md border border-coolgrey dark:border-night-border px-3 py-2 text-sm text-ink dark:text-ivory hover:bg-ivory dark:bg-night"
               aria-label="Previous month"
             >
               ‹ Prev
             </button>
-            <span className="min-w-[140px] text-center font-medium text-ink">
+            <span className="min-w-[140px] text-center font-medium text-ink dark:text-ivory">
               {formatMonthYear(currentDate)}
             </span>
             <button
               type="button"
               onClick={() => setCurrentDate((d) => addMonths(d, 1))}
-              className="rounded-md border border-coolgrey px-3 py-2 text-sm text-ink hover:bg-ivory"
+              className="rounded-md border border-coolgrey dark:border-night-border px-3 py-2 text-sm text-ink dark:text-ivory hover:bg-ivory dark:bg-night"
               aria-label="Next month"
             >
               Next ›
@@ -68,14 +68,14 @@ export function CalendarView() {
             <button
               type="button"
               onClick={goToday}
-              className="rounded-md border border-coolgrey px-3 py-2 text-sm font-medium text-crimson hover:bg-crimson/5"
+              className="rounded-md border border-coolgrey dark:border-night-border px-3 py-2 text-sm font-medium text-crimson hover:bg-crimson/5"
             >
               Today
             </button>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <div className="flex rounded-full border border-coolgrey bg-white p-1">
+            <div className="flex rounded-full border border-coolgrey dark:border-night-border bg-white dark:bg-night-card p-1">
               {VIEW_OPTIONS.map((option) => (
                 <button
                   key={option.id}
@@ -85,7 +85,7 @@ export function CalendarView() {
                     'rounded-full px-3 py-1.5 text-xs font-medium transition',
                     view === option.id
                       ? 'bg-crimson text-white'
-                      : 'text-ink/60 hover:text-crimson'
+                      : 'text-ink/60 dark:text-ivory/60 hover:text-crimson'
                   )}
                 >
                   {option.label}

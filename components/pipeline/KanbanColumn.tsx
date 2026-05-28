@@ -42,7 +42,7 @@ export function KanbanColumn({
   return (
     <div
       className={cn(
-        'flex min-w-[280px] shrink-0 snap-start scroll-ml-4 flex-col rounded-xl border border-coolgrey bg-white dark:border-night-border dark:bg-night-card md:min-w-[280px] lg:min-w-0 lg:flex-1',
+        'flex min-w-[280px] shrink-0 snap-start scroll-ml-4 flex-col rounded-xl border border-coolgrey dark:border-night-border bg-white dark:bg-night-card dark:border-night-border dark:bg-night-card md:min-w-[280px] lg:min-w-0 lg:flex-1',
         isDropTarget && 'bg-crimson/5 ring-2 ring-crimson/40'
       )}
     >
@@ -59,7 +59,7 @@ export function KanbanColumn({
           <h3 className="font-serif text-base font-semibold text-ink dark:text-ivory">
             {stage}
           </h3>
-          <span className="rounded-full bg-white/80 px-2 py-0.5 text-xs font-semibold text-ink dark:bg-night-surface dark:text-ivory">
+          <span className="rounded-full bg-white/80 px-2 py-0.5 text-xs font-semibold text-ink dark:text-ivory dark:bg-night-surface dark:text-ivory">
             {leads.length}
           </span>
         </div>
@@ -70,7 +70,7 @@ export function KanbanColumn({
 
       <div
         ref={setNodeRef}
-        className="flex min-h-[500px] flex-1 flex-col bg-ivory p-3 dark:bg-night"
+        className="flex min-h-[500px] flex-1 flex-col bg-ivory dark:bg-night p-3 dark:bg-night"
       >
         <SortableContext items={leadIds} strategy={verticalListSortingStrategy}>
           <div className="flex flex-1 flex-col gap-3">
@@ -97,7 +97,7 @@ export function KanbanColumn({
         </SortableContext>
       </div>
 
-      <div className="border-t border-coolgrey bg-ivory px-3 py-3 dark:border-night-border dark:bg-night">
+      <div className="border-t border-coolgrey dark:border-night-border bg-ivory dark:bg-night px-3 py-3 dark:border-night-border dark:bg-night">
         <Button
           type="button"
           variant="ghost"

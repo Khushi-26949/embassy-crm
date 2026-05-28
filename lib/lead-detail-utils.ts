@@ -40,7 +40,7 @@ export const ACTIVITY_CONFIG: Record<
   Meeting: { icon: Users, circleClass: 'bg-purple-100 text-purple-700' },
   ProposalSent: { icon: FileText, circleClass: 'bg-gold/20 text-[#A8892E]' },
   Tasting: { icon: UtensilsCrossed, circleClass: 'bg-crimson/10 text-crimson' },
-  NoteAdded: { icon: StickyNote, circleClass: 'bg-coolgrey text-ink/60' },
+  NoteAdded: { icon: StickyNote, circleClass: 'bg-coolgrey text-ink/60 dark:text-ivory/60' },
   StageChanged: { icon: FileText, circleClass: 'bg-gold/20 text-[#A8892E]' },
 };
 
