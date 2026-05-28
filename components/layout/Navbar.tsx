@@ -39,7 +39,7 @@ export function Navbar({
   }, []);
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 shrink-0 items-center gap-3 border-b border-coolgrey dark:border-night-border bg-white/80 px-4 backdrop-blur-md transition-colors duration-300 dark:border-night-border dark:bg-night-card/90 md:gap-4 md:px-6">
+    <header className="sticky top-0 z-30 flex h-16 shrink-0 items-center gap-3 border-b border-coolgrey dark:border-night-border bg-white/80 px-4 backdrop-blur-md transition-colors duration-300 dark:bg-night-card/90 md:gap-4 md:px-6">
       <h1 className="min-w-0 font-serif text-xl text-ink dark:text-ivory md:shrink-0 md:text-[22px]">
         {pageTitle}
       </h1>
@@ -48,13 +48,13 @@ export function Navbar({
         <button
           type="button"
           onClick={onOpenSearch}
-          className="flex h-10 w-full max-w-md items-center gap-2 rounded-full border border-coolgrey dark:border-night-border bg-ivory dark:bg-night px-4 text-left text-sm text-ink/50 transition hover:border-crimson/30 dark:border-night-border dark:bg-night-surface dark:text-ivory/50"
+          className="flex h-10 w-full max-w-md items-center gap-2 rounded-full border border-coolgrey dark:border-night-border bg-ivory dark:bg-night px-4 text-left text-sm text-ink/50 transition hover:border-crimson/30 dark:bg-night-surface dark:text-ivory/50"
         >
           <Search className="h-4 w-4 shrink-0 text-ink/40 dark:text-ivory/40" />
           <span className="flex-1 truncate">
             Search clients, events, leads...
           </span>
-          <kbd className="hidden rounded border border-coolgrey dark:border-night-border bg-white dark:bg-night-card dark:bg-night-surface px-1.5 py-0.5 text-[10px] font-medium text-ink dark:text-ivory/50 dark:border-night-border dark:bg-night-card sm:inline">
+          <kbd className="hidden rounded border border-coolgrey dark:border-night-border bg-white dark:bg-night-card px-1.5 py-0.5 text-[10px] font-medium text-ink dark:text-ivory/50 sm:inline">
             ⌘K
           </kbd>
         </button>
@@ -65,7 +65,7 @@ export function Navbar({
           type="button"
           onClick={onOpenSearch}
           aria-label="Search"
-          className="rounded-full p-2 text-ink/60 dark:text-ivory/60 transition-colors duration-150 hover:bg-ivory dark:bg-night hover:text-crimson dark:text-ivory/60 dark:hover:bg-night-surface md:hidden"
+          className="rounded-full p-2 text-ink/60 dark:text-ivory/60 transition-colors duration-150 hover:bg-ivory dark:bg-night hover:text-crimson dark:hover:bg-night-surface md:hidden"
         >
           <Search className="h-5 w-5" />
         </button>
@@ -74,7 +74,7 @@ export function Navbar({
           type="button"
           onClick={toggleTheme}
           aria-label="Toggle dark mode"
-          className="rounded-full p-2 text-ink/60 dark:text-ivory/60 transition-colors duration-150 hover:bg-ivory dark:bg-night hover:text-crimson dark:text-ivory/60 dark:hover:bg-night-surface"
+          className="rounded-full p-2 text-ink/60 dark:text-ivory/60 transition-colors duration-150 hover:bg-ivory dark:bg-night hover:text-crimson dark:hover:bg-night-surface"
         >
           {theme === 'dark' ? (
             <Sun className="h-5 w-5" />
@@ -125,9 +125,9 @@ export function Navbar({
           {userMenuOpen ? (
             <div
               role="menu"
-              className="absolute right-0 top-full z-50 mt-2 w-52 rounded-lg border border-coolgrey dark:border-night-border bg-white dark:bg-night-card py-1 shadow-elevated dark:border-night-border dark:bg-night-card"
+              className="absolute right-0 top-full z-50 mt-2 w-52 rounded-lg border border-coolgrey dark:border-night-border bg-white dark:bg-night-card py-1 shadow-elevated"
             >
-              <div className="border-b border-coolgrey dark:border-night-border px-4 py-3 dark:border-night-border">
+              <div className="border-b border-coolgrey dark:border-night-border px-4 py-3">
                 <p className="text-sm font-medium text-ink dark:text-ivory">
                   {CURRENT_USER.name}
                 </p>
@@ -138,14 +138,14 @@ export function Navbar({
               <button
                 type="button"
                 role="menuitem"
-                className="w-full px-4 py-2 text-left text-sm text-ink dark:text-ivory hover:bg-ivory dark:bg-night dark:text-ivory dark:hover:bg-night-surface"
+                className="w-full px-4 py-2 text-left text-sm text-ink dark:text-ivory hover:bg-ivory dark:bg-night dark:hover:bg-night-surface"
               >
                 Profile
               </button>
               <button
                 type="button"
                 role="menuitem"
-                className="w-full px-4 py-2 text-left text-sm text-ink dark:text-ivory hover:bg-ivory dark:bg-night dark:text-ivory dark:hover:bg-night-surface"
+                className="w-full px-4 py-2 text-left text-sm text-ink dark:text-ivory hover:bg-ivory dark:bg-night dark:hover:bg-night-surface"
               >
                 Settings
               </button>

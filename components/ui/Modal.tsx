@@ -41,7 +41,7 @@ export function Modal({ open, onClose, title, children, className }: ModalProps)
         )}
       >
         {title ? (
-          <div className="shrink-0 border-b border-coolgrey dark:border-night-border px-5 py-4 dark:border-night-border">
+          <div className="shrink-0 border-b border-coolgrey dark:border-night-border px-5 py-4">
             <h2 className="font-serif text-xl text-ink dark:text-ivory">{title}</h2>
           </div>
         ) : null}

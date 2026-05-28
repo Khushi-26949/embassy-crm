@@ -114,7 +114,7 @@ export function LeadDetailView({ initialLead }: LeadDetailViewProps) {
   );
 
   const selectClass =
-    'h-10 w-full rounded-md border border-coolgrey dark:border-night-border bg-white dark:bg-night-card dark:bg-night-surface px-3 text-sm text-ink dark:text-ivory outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20';
+    'h-10 w-full rounded-md border border-coolgrey dark:border-night-border bg-white dark:bg-night-surface px-3 text-sm text-ink dark:text-ivory outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20';
 
   return (
     <div className="space-y-6">

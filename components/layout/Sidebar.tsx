@@ -33,7 +33,7 @@ function NavLink({
         'group relative flex items-center justify-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors duration-150 lg:justify-start',
         isActive
           ? 'border-l-[3px] border-l-gold bg-crimson text-white'
-          : 'border-l-[3px] border-l-transparent text-ink/60 dark:text-ivory/60 hover:bg-crimson/5 hover:text-crimson dark:text-ivory/60 dark:hover:bg-crimson/10 dark:hover:text-ivory'
+          : 'border-l-[3px] border-l-transparent text-ink/60 dark:text-ivory/60 hover:bg-crimson/5 hover:text-crimson dark:hover:bg-crimson/10 dark:hover:text-ivory'
       )}
     >
       <Icon className="h-5 w-5 shrink-0" />
@@ -53,7 +53,7 @@ export function Sidebar() {
       {/* Desktop & tablet sidebar */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-40 hidden flex-col border-r border-coolgrey dark:border-night-border bg-white dark:bg-night-card transition-all duration-300 dark:border-night-border dark:bg-night-card',
+          'fixed inset-y-0 left-0 z-40 hidden flex-col border-r border-coolgrey dark:border-night-border bg-white dark:bg-night-card transition-all duration-300',
           'md:flex md:w-16 lg:w-[260px]'
         )}
       >
@@ -90,7 +90,7 @@ export function Sidebar() {
                 'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-150',
                 pathname === '/style-guide'
                   ? 'bg-crimson/10 text-crimson dark:text-gold'
-                  : 'text-ink/60 dark:text-ivory/60 hover:bg-ivory dark:bg-night hover:text-crimson dark:text-ivory/60 dark:hover:bg-night-surface'
+                  : 'text-ink/60 dark:text-ivory/60 hover:bg-ivory dark:bg-night hover:text-crimson dark:hover:bg-night-surface'
               )}
             >
               <Palette className="h-4 w-4 shrink-0" />
@@ -99,7 +99,7 @@ export function Sidebar() {
           </div>
 
           {/* Bottom user card — full on lg */}
-          <div className="mt-4 hidden items-center gap-3 rounded-lg border border-coolgrey dark:border-night-border bg-ivory dark:bg-night p-3 dark:border-night-border dark:bg-night-surface lg:flex">
+          <div className="mt-4 hidden items-center gap-3 rounded-lg border border-coolgrey dark:border-night-border bg-ivory dark:bg-night p-3 dark:bg-night-surface lg:flex">
             <Avatar name={CURRENT_USER.name} size="sm" />
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-medium text-ink dark:text-ivory">
@@ -133,7 +133,7 @@ export function Sidebar() {
       <nav
         className={cn(
           'fixed inset-x-0 bottom-0 z-50 flex h-16 items-stretch justify-around',
-          'border-t border-coolgrey dark:border-night-border bg-white dark:bg-night-card dark:border-night-border dark:bg-night-card md:hidden'
+          'border-t border-coolgrey dark:border-night-border bg-white dark:bg-night-card md:hidden'
         )}
         aria-label="Mobile navigation"
       >

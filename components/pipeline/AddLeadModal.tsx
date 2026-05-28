@@ -41,7 +41,7 @@ const EVENT_TYPES: Lead['eventType'][] = [
 ];
 
 const selectClassName = cn(
-  'h-10 w-full rounded-md border border-coolgrey dark:border-night-border bg-white dark:bg-night-card dark:bg-night-surface px-3 text-sm text-ink dark:text-ivory outline-none transition',
+  'h-10 w-full rounded-md border border-coolgrey dark:border-night-border bg-white dark:bg-night-surface px-3 text-sm text-ink dark:text-ivory outline-none transition',
   'focus:border-crimson focus:ring-2 focus:ring-crimson/20'
 );
 

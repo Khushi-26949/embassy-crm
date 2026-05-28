@@ -51,7 +51,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-ivory dark:bg-night transition-colors duration-300 dark:bg-night">
+    <div className="min-h-screen bg-ivory dark:bg-night transition-colors duration-300">
       <Sidebar />
 
       <div className="flex min-h-screen flex-col transition-all duration-300 md:ml-16 lg:ml-[260px] pb-16 md:pb-0">

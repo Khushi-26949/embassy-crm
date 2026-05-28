@@ -193,7 +193,7 @@ export function StyleGuideView() {
               <div
                 key={label}
                 className={cn(
-                  'flex flex-col items-center gap-2 rounded-lg border border-coolgrey dark:border-night-border px-4 py-3 dark:border-night-border'
+                  'flex flex-col items-center gap-2 rounded-lg border border-coolgrey dark:border-night-border px-4 py-3'
                 )}
               >
                 <Icon className="h-5 w-5 text-crimson" />

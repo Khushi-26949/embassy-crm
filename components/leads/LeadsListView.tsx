@@ -17,10 +17,10 @@ export function LeadsListView() {
         <p className="text-sm text-ink/60 dark:text-ivory/60">{leads.length} total leads</p>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-coolgrey dark:border-night-border bg-white dark:bg-night-card shadow-card dark:border-night-border dark:bg-night-card">
+      <div className="overflow-x-auto rounded-xl border border-coolgrey dark:border-night-border bg-white dark:bg-night-card shadow-card">
         <table className="w-full min-w-[800px] text-sm">
           <thead>
-            <tr className="border-b border-coolgrey dark:border-night-border bg-ivory-dark text-left text-xs text-ink/60 dark:text-ivory/60 dark:border-night-border dark:bg-night-surface dark:text-ivory/60">
+            <tr className="border-b border-coolgrey dark:border-night-border bg-ivory-dark text-left text-xs text-ink/60 dark:text-ivory/60 dark:bg-night-surface">
               <th className="sticky left-0 z-10 bg-ivory-dark px-4 py-3 font-semibold dark:bg-night-surface">
                 Client
               </th>
@@ -36,7 +36,7 @@ export function LeadsListView() {
                 key={lead.id}
                 className="border-b border-coolgrey/60 hover:bg-ivory/60 dark:border-night-border dark:hover:bg-night-surface"
               >
-                <td className="sticky left-0 z-10 bg-white dark:bg-night-card px-4 py-3 dark:bg-night-card">
+                <td className="sticky left-0 z-10 bg-white dark:bg-night-card px-4 py-3">
                   <Link
                     href={`/leads/${lead.id}`}
                     className="font-medium text-crimson hover:underline"
